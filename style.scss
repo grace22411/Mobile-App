@@ -268,11 +268,15 @@ body{
                         text-align: center;
                         border-radius:20px;
                     }
+                    .first{
+                        background:rgba(190,164,255,0.7);
+                    }
                     p{
                         font-size:14px;
+                        margin:8px 0;
                     }
                     a{
-
+                        color:rgba(190,164,255,0.7);
                     }
                 }
             }

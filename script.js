@@ -22,7 +22,7 @@ $(document).ready(function(){
 
     });
     
-    $("span, .overlay").click(function () {
+    $(".overlay").click(function () {
         $(".show").fadeOut();
         $('.meal').show();
     });
