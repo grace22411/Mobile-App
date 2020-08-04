@@ -2,28 +2,31 @@ $(document).ready(function(){
 
     "use strict";
 
-    $(".check").on("click" , function(){
+    $(document).on('click' , '.check' , function(){
         $('.noti_two').addClass("fadeUp");
         $('.meal').addClass("meal-show");
         $('.meal-content').slideDown();
     });
 
     $('.cancel').click(function(){
-         $('.meal').hide();
+         $('.meal').slideUp();
+          $('.meal-content').slideUp();
           $('.noti_two').addClass("fadeDown");
+          $(".show").hide();
     });
 
-    $(".meal-image img").click(function () {
-         $(".meal-image img").addClass("image-scale")
+    $(document).on('click' , '.imageup',  function(){
+        $(".img-show img").addClass("image-scale");
         var $src = $(this).attr("src");
-        $(".show").fadeIn().delay(0.005);
+        $(".show").fadeIn(1000);
         $(".img-show img").attr("src", $src);
         $('.meal').hide();
 
     });
     
     $(".overlay").click(function () {
-        $(".show").fadeOut();
+        $(".overlay").fadeOut();
+        $(".img-show img").addClass("image-out");
         $('.meal').show();
     });
 

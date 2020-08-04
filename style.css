@@ -47,7 +47,6 @@ body {
 .show .img-show {
   width: 374px;
   height: 374px;
-  background: #FFF;
   position: absolute;
   top: 50%;
   z-index: 9999;
@@ -84,10 +83,11 @@ body {
 }
 .meal .meal-content {
   height: 360px;
+  padding-bottom: 25px;
   width: 100%;
-  overflow: hidden;
+  overflow: scroll;
   background-color: #fff;
-  bottom: 0;
+  bottom: -10px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   position: absolute;
@@ -105,7 +105,7 @@ body {
 .meal .meal-content .meal-head {
   background-color: #f9f5e1;
   display: flex;
-  height: 60px;
+  height: 70px;
   width: 100%;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -113,11 +113,12 @@ body {
 .meal .meal-content .today-meal {
   flex: 8;
   border-top-left-radius: 15px;
-  text-align: center;
-  padding-top: 15px;
+  text-align: left;
+  padding-top: 20px;
+  padding-left: 20px;
 }
 .meal .meal-content .today-meal h4 {
-  font-size: 20px;
+  font-size: 18px;
 }
 .meal .meal-content .cancel {
   flex: 4;
@@ -125,7 +126,7 @@ body {
   border-top-right-radius: 15px;
   text-align: center;
   color: #fff;
-  padding-top: 8px;
+  padding-top: 15px;
   font-size: 30px;
 }
 .meal .meal-content .each-meal {
@@ -224,6 +225,20 @@ body {
   cursor: pointer;
 }
 
+.getting_started .row .col-md-6 {
+  margin-bottom: 30px;
+}
+.getting_started .row .col-md-6 h3 {
+  font-size: 17px;
+  color: #00c267;
+  font-weight: 400;
+}
+.getting_started .row .col-md-6 .row .col-md-3 {
+  padding-top: 40px;
+}
+.getting_started .row .col-md-6 .row .col-md-3 p {
+  font-size: 13px;
+}
 .getting_started .row .starting {
   padding: 20px;
   background-color: #E4F5FD;
@@ -244,6 +259,7 @@ body {
   padding-top: 8px;
   text-align: center;
   border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 .getting_started .row .starting .row .col-md-6 .first {
   background: rgba(190, 164, 255, 0.7);
@@ -254,6 +270,7 @@ body {
 }
 .getting_started .row .starting .row .col-md-6 a {
   color: rgba(190, 164, 255, 0.7);
+  text-decoration: underline;
 }
 
 .fadeUp {
@@ -307,12 +324,57 @@ body {
   0% {
     height: 60px;
     width: 60px;
+    opacity: 0;
+    top: 200px;
+    left: 30px;
+  }
+  100% {
+    opacity: 1;
+    height: 364px;
+    width: 364px;
+  }
+}
+.image-out {
+  animation: imageHide 0.4s ease-in 0.2s forwards;
+}
+
+@keyframes imageHide {
+  0% {
+    height: 364px;
+    width: 364px;
+    opacity: 1;
+  }
+  50% {
+    position: fixed;
+    height: 120px;
+    width: 120px;
+  }
+  75% {
+    height: 75px;
+    width: 75px;
+  }
+  100% {
+    opacity: 1;
+    height: 60px;
+    width: 60px;
+    top: 200px;
+    left: 30px;
+    z-index: 9999;
+    position: fixed;
+  }
+}
+.reduce-height {
+  animation: heightReduce 0.4s ease-in forwards;
+}
+
+@keyframes heightReduce {
+  0% {
+    height: 360px;
     opacity: 1;
   }
   100% {
     opacity: 0;
-    height: 364px;
-    width: 364px;
+    height: 60px;
   }
 }
 
